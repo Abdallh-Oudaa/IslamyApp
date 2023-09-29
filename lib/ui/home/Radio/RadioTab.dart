@@ -5,6 +5,11 @@ class Radio_Tab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset("assets/images/radio_image.png"),
+      ],
+    );
   }
 }

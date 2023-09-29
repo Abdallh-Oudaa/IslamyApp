@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:islamy/ui/home/My_Theme.dart';
 import 'package:islamy/ui/home/Tasbeh/TasbehTab.dart';
 import 'package:islamy/ui/home/hades/HadesTab.dart';
 import 'package:islamy/ui/home/quran/QuranTab.dart';
 import 'package:islamy/ui/home/radio/RadioTab.dart';
+import 'package:islamy/ui/home/settings/Settings_Tap.dart';
 
 // ignore: must_be_immutable
 class home_screen extends StatefulWidget {
@@ -21,7 +23,9 @@ class _home_screenState extends State<home_screen> {
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/main.png"),
+            image: AssetImage(
+              My_Theme.isEnableDark?"assets/images/image_dark.png":
+              "assets/images/main.png"),
             fit: BoxFit.fill,
           ),
         ),
@@ -38,23 +42,26 @@ class _home_screenState extends State<home_screen> {
               },
               items: [
                 BottomNavigationBarItem(
-                  backgroundColor: Color(0xFFB7935F),
+                  backgroundColor:Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage("assets/images/ic_quran.png")),
                   label: "quran",
                 ),
                 BottomNavigationBarItem(
-                    backgroundColor: Color(0xFFB7935F),
+                     backgroundColor:Theme.of(context).primaryColor,
                     icon: ImageIcon(AssetImage("assets/images/ic_hadeth.png")),
                     label: "hadeth"),
                 BottomNavigationBarItem(
-                  backgroundColor: Color(0xFFB7935F),
+                  backgroundColor:Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage("assets/images/ic_sebha.png")),
                   label: "sebha",
                 ),
                 BottomNavigationBarItem(
-                    backgroundColor: Color(0xFFB7935F),
+                     backgroundColor:Theme.of(context).primaryColor,
                     icon: ImageIcon(AssetImage("assets/images/ic_radio.png")),
                     label: "radio"),
+                    BottomNavigationBarItem(
+                      backgroundColor: Theme.of(context).primaryColor,
+                      icon: Icon(Icons.settings),label: "settings"),
               ]),
           body: Taps[selectedIndex],
         ),
@@ -67,5 +74,6 @@ class _home_screenState extends State<home_screen> {
     Hades_Tap(),
     Tasbeh_Tap(),
     Radio_Tab(),
+    Settings_Tap(),
   ];
 }

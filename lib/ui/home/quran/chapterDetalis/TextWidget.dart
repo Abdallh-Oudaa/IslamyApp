@@ -14,7 +14,7 @@ class Text_Widget extends StatelessWidget {
           padding: EdgeInsets.all(8),
           alignment: Alignment.center,
           child: Text('$content{$index}',textDirection: TextDirection.rtl,
-          textAlign: TextAlign.center,style: TextStyle(fontSize: 18),
+          textAlign: TextAlign.center,style:Theme.of(context).textTheme.bodyMedium,
 
           ));
   }

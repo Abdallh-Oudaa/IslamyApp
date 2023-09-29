@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islamy/ui/home/My_Theme.dart';
 import 'package:islamy/ui/home/quran/chapterDetalis/TextWidget.dart';
 
 // ignore: must_be_immutable
@@ -21,7 +22,9 @@ class _quran_Chapter_DetalisState extends State<quran_Chapter_Detalis> {
     return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/main.png"),
+            image: AssetImage(
+              My_Theme.isEnableDark?"assets/images/image_dark.png":
+              "assets/images/main.png"),
             fit: BoxFit.fill,
           ),
         ),
@@ -34,12 +37,7 @@ class _quran_Chapter_DetalisState extends State<quran_Chapter_Detalis> {
                     child: CircularProgressIndicator(),
                   )
                 : Card(
-                  elevation: 40,
-                  color: Colors.white,
-                  margin: EdgeInsets.symmetric(horizontal: 20,vertical: 70),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25),
-                  ),
+               
                   child: ListView.builder(
                       itemBuilder: (context, index) => Text_Widget(
                         splitLine[index],index+1 ),
@@ -52,7 +50,7 @@ class _quran_Chapter_DetalisState extends State<quran_Chapter_Detalis> {
 
   void ReadFile(int index) async {
     String fileText = await rootBundle.loadString('assets/files/${index+1}.txt');
-    splitLine=fileText.split("\n");
+    splitLine=fileText.trim().split("\n");
     setState(() {
       
     });

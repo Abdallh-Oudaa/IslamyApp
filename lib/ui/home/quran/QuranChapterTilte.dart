@@ -20,8 +20,8 @@ class quran_chapter_Title extends StatelessWidget {
           child: Text(
             title,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 20),
-          )),
-    );
+            style: Theme.of(context).textTheme.labelMedium,),
+          )
+  );
   }
 }

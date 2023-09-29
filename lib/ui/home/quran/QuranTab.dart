@@ -131,7 +131,7 @@ class Quran_Tap extends StatelessWidget {
               itemBuilder: (context, index) =>
                   quran_chapter_Title(names[index],index),
               separatorBuilder: (context, Index) => Container(
-                    color: Color(0xFFB7935F),
+                    color:Theme.of(context).dividerColor,
                     width: double.infinity,
                     height: 2,
                   ),
