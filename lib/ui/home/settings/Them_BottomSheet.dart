@@ -1,5 +1,5 @@
 
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class ThemBottomSheet extends StatelessWidget {
@@ -14,8 +14,8 @@ class ThemBottomSheet extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        GetSelectedItme("Light",context),
-        GetUnselctedItem("Dark",context), 
+        GetSelectedItme(AppLocalizations.of(context)!.light,context),
+        GetUnselctedItem(AppLocalizations.of(context)!.dark,context), 
         ],
       ),
     );
@@ -31,6 +31,6 @@ class ThemBottomSheet extends StatelessWidget {
           ); }
 
   Widget GetUnselctedItem(String text,BuildContext context){
-     return Text("Dark",style: TextStyle(fontSize: 18,color: Theme.of(context).colorScheme.background),);
+     return Text(AppLocalizations.of(context)!.dark,style: TextStyle(fontSize: 18,color: Theme.of(context).colorScheme.background),);
   }
 }

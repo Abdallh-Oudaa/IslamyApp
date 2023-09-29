@@ -1,0 +1,14 @@
+{
+    "app_name": "islamy",
+    "quran": "quran",
+    "hadeth": "Hadeth",
+    "sebha": "Sebha",
+    "redio": "Radio",
+    "settings":"Settings",
+    "theme":"Theme",
+    "languge":"languge",
+    "light":"Light",
+    "dark":"Dark",
+    "english":"English",
+    "arabic":"Arabic"
+}

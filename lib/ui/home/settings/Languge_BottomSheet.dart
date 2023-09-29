@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LangugeBottomSheet extends StatelessWidget {
   const LangugeBottomSheet({super.key});
@@ -12,8 +13,8 @@ class LangugeBottomSheet extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          GetSelctedItme("العربيه", context),
-          GetUnSelctedItme("english", context),
+          GetSelctedItme(AppLocalizations.of(context)!.arabic, context),
+          GetUnSelctedItme(AppLocalizations.of(context)!.english, context),
         ],
       ),
     );

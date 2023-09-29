@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamy/ui/home/hades/ClassModel.dart';
 import 'package:islamy/ui/home/hades/HadethTiltleWedgit.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // ignore: must_be_immutable
 class Hades_Tap extends StatefulWidget {
@@ -27,8 +28,7 @@ class _Hades_TapState extends State<Hades_Tap> {
               color: Theme.of(context).primaryColor,
               width: 2,
             ))),
-            child: Text(
-              "Hadeth",
+            child: Text(AppLocalizations.of(context)!.hadeth,
               style: TextStyle(fontSize: 23),
             )),
         AllaHadeth.isEmpty

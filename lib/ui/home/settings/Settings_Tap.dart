@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/ui/home/settings/Languge_BottomSheet.dart';
 import 'package:islamy/ui/home/settings/Them_BottomSheet.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class Settings_Tap extends StatelessWidget {
   const Settings_Tap({super.key});
 
@@ -13,8 +13,7 @@ class Settings_Tap extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "them",
+          Text(AppLocalizations.of(context)!.theme,
             style:Theme.of(context).textTheme.labelMedium,
           ),
           InkWell(
@@ -28,16 +27,14 @@ class Settings_Tap extends StatelessWidget {
                       width: 2,
                       color: Theme.of(context).colorScheme.background,
                     )),
-                child: Text(
-                  "light",
+                child: Text(AppLocalizations.of(context)!.light,
                   style: TextStyle(fontSize: 18,color:Theme.of(context).dividerColor),
                 )),
           ),
           SizedBox(
             height: 45,
           ),
-          Text(
-            "languge",
+          Text(AppLocalizations.of(context)!.languge,
             style:Theme.of(context).textTheme.labelMedium,
           ),
           InkWell(
@@ -55,7 +52,7 @@ class Settings_Tap extends StatelessWidget {
                       color: Theme.of(context).colorScheme.background,
                     )),
                 child: Text(
-                  "English",
+                  AppLocalizations.of(context)!.english,
                   style: TextStyle(
                       fontSize: 18,
                       color: Theme.of(context).dividerColor),
