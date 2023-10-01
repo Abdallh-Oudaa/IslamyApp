@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:islamy/ui/home/My_Theme.dart';
+import 'package:islamy/provider_class.dart';
+
 import 'package:islamy/ui/home/Tasbeh/TasbehTab.dart';
 import 'package:islamy/ui/home/hades/HadesTab.dart';
 import 'package:islamy/ui/home/quran/QuranTab.dart';
 import 'package:islamy/ui/home/radio/RadioTab.dart';
 import 'package:islamy/ui/home/settings/Settings_Tap.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class home_screen extends StatefulWidget {
@@ -20,13 +22,12 @@ class _home_screenState extends State<home_screen> {
 
   @override
   Widget build(BuildContext context) {
+    settings_provider SettingsProvider=Provider.of<settings_provider>(context);
     return SafeArea(
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-              My_Theme.isEnableDark?"assets/images/image_dark.png":
-              "assets/images/main.png"),
+            image: AssetImage(SettingsProvider.change_image(),),
             fit: BoxFit.fill,
           ),
         ),

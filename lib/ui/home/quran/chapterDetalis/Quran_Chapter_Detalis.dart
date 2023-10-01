@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islamy/ui/home/My_Theme.dart';
+import 'package:islamy/provider_class.dart';
+
 import 'package:islamy/ui/home/quran/chapterDetalis/TextWidget.dart';
+import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class quran_Chapter_Detalis extends StatefulWidget {
@@ -14,6 +16,7 @@ class quran_Chapter_Detalis extends StatefulWidget {
 class _quran_Chapter_DetalisState extends State<quran_Chapter_Detalis> {
   @override
   Widget build(BuildContext context) {
+    settings_provider SettingsProvider=Provider.of<settings_provider>(context);
     Data_Model_Quran agrs =
         ModalRoute.of(context)?.settings.arguments as Data_Model_Quran;
    if(splitLine.isEmpty){
@@ -22,9 +25,7 @@ class _quran_Chapter_DetalisState extends State<quran_Chapter_Detalis> {
     return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-              My_Theme.isEnableDark?"assets/images/image_dark.png":
-              "assets/images/main.png"),
+            image: AssetImage(SettingsProvider.change_image()),
             fit: BoxFit.fill,
           ),
         ),
