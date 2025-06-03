@@ -5,9 +5,10 @@
 # Quran details
 # Hades tab
 # settings tab
-# dark theme,light theme
+# dark mode,light mode
+# splash screen
 ## tech using
 # flutter
 # provider
 # localization
-# dark theme
+# dark mode
